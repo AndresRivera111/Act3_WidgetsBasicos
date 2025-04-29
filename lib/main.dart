@@ -1,43 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:rivera/pagina_siete.dart';
+import 'package:rivera/pagina_seis.dart';
+import 'package:rivera/pagina_cinco.dart';
+import 'package:rivera/pagina_cuatro.dart';
+import 'package:rivera/pagina_uno.dart';
+import 'package:rivera/pagina_dos.dart';
+import 'package:rivera/pagina_tres.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MyRoutesApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MyRoutesApp extends StatelessWidget {
+  const MyRoutesApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Entre paginas routes',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const PantallaUno(),
+        '/Pantalla Dos': (context) => const PantallaDos(),
+        '/Pantalla Tres': (context) => const PantallaTres(),
+        '/Pantalla Cuatro': (context) => const PantallaCuatro(),
+        '/Pantalla Cinco': (context) => const PantallaCinco(),
+        '/Pantalla Seis': (context) => const PantallaSeis(),
+        '/Pantalla Siete': (context) => const PantallaSiete(),
+      },
     );
   }
 }
